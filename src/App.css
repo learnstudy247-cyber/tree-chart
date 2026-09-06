@@ -97,10 +97,14 @@ textarea {
 }
 
 .tree-node {
-  width: 240px;
-  min-height: 155px;
+  width: 100%;
+  height: 100%;
+  min-width: 180px;
+  min-height: 110px;
   border: 3px solid;
   padding: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
   box-shadow:
     0 7px 20px rgba(15, 23, 42, 0.12);
 }
@@ -120,8 +124,9 @@ textarea {
 .node-notes {
   margin-top: 10px;
   width: 100%;
-  height: 70px;
-  resize: vertical;
+  min-height: 70px;
+  height: calc(100% - 88px);
+  resize: none;
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: transparent;
   border-radius: 7px;
@@ -337,4 +342,37 @@ textarea {
 .shape-select:focus {
   outline: 2px solid rgba(59, 130, 246, 0.25);
   outline-offset: 1px;
+}
+
+
+/* Resizable boxes + PDF branch controls */
+.react-flow__node-custom {
+  min-width: 180px;
+  min-height: 110px;
+}
+
+.auto-size-btn,
+.pdf-section-btn {
+  background: rgba(255, 255, 255, 0.94);
+  color: #172033;
+  white-space: nowrap;
+}
+
+.pdf-section-btn {
+  border: 1px solid rgba(15, 23, 42, 0.18) !important;
+}
+
+.pdf-sections-panel button {
+  border: 1px solid #d7dee8;
+  border-radius: 6px;
+  background: #fff;
+  color: #172033;
+  cursor: pointer;
+  padding: 2px 7px;
+  font-weight: 700;
+}
+
+.pdf-sections-panel button:disabled {
+  cursor: default;
+  opacity: .35;
 }
